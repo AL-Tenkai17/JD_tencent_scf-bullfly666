@@ -2,11 +2,11 @@
 
 #组件信息
 component: scf # (必选) 组件名称，在该实例中为scf
-name: jdscript # (必选) 组件实例名称。
+name: jdscript__bullfly666 # (必选) 组件实例名称。
 
 #组件参数配置
 inputs:
-  name: scf-${name}__bullfly666 # 云函数名称，默认为 ${name}-${stage}-${app}
+  name: scf-${name} # 云函数名称，默认为 ${name}-${stage}-${app}
   namespace: default
   enableRoleAuth: true # 默认会尝试创建 SCF_QcsRole 角色，如果不需要配置成 false 即可
   src: 
@@ -34,7 +34,7 @@ inputs:
         parameters:
           name: config
           cronExpression: "0 0 * * * * *"
-          enable: true
+          enable: false
           argument: config
     - timer: #超市蓝币兑换
         parameters:
@@ -46,19 +46,19 @@ inputs:
         parameters:
           name: cfd
           cronExpression: "59 0 0 * * * *"
-          enable: true
+          enable: false
           argument: jd_cfd
     - timer:
         parameters:
           name: cfd_pearl
           cronExpression: "50 59 * * * * *"
-          enable: true
+          enable: false
           argument: jd_cfd_pearl_ex
     - timer:
         parameters:
           name: jxmc
           cronExpression: "59 19 0 * * * *"
-          enable: true
+          enable: false
           argument: jd_jxmc
     - timer:
         parameters:
